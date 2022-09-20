@@ -1,8 +1,13 @@
 import styled from "styled-components";
-export default function ItemListContainer(){
+export default function ItemListContainer(props){
     return(
         <>
-        <h4>ItemListContainer</h4>
+            <Titulo>{props.greeting}</Titulo>
         </>
     );
 };
+
+const Titulo=styled.div`
+text-align: center;
+font-size: 3rem;
+`

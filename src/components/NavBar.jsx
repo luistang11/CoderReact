@@ -33,6 +33,10 @@ const Logo=styled.img`
     width: 80px;
     padding: .3rem 1rem;
     margin-left: 30px;
+    transition: 0.3s;
+    :hover{
+        transform: scale(1.15);
+    }
 `
 const Titulo=styled.h2`
     color: white;
@@ -57,7 +61,7 @@ position: relative;
     background: yellowgreen;
     position: absolute;
     left:0;
-    bottom: -12px;
+    bottom: -10px;
     transition: 0.4s ease-out;
 }
 :hover::before{
