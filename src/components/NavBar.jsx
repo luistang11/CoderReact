@@ -1,17 +1,21 @@
 import styled from "styled-components";
 import CartWidget from "./CartWidget";
+import{Link} from "react-router-dom"
 
 export default function NavBar(){
     return(
     <>
         <Nav>
-            <Logo src="https://cdn-icons-png.flaticon.com/512/427/427410.png" alt="Logo" />
+            <Link to="/"><Logo src="https://cdn-icons-png.flaticon.com/512/427/427410.png" alt="Logo" /></Link>
             <Titulo>VIRGO CUEVA STORE</Titulo>
             <ul>
-                <ItemListaNav><LinkListanav href="#">Categorías</LinkListanav></ItemListaNav>
-                <ItemListaNav><LinkListanav href="#">Ofertas</LinkListanav></ItemListaNav>
-                <ItemListaNav><LinkListanav href="#">Recomendaciones</LinkListanav></ItemListaNav>
-                <ItemListaNav><LinkListanav href="#">Ayuda</LinkListanav></ItemListaNav>
+                <Link to="/"><ItemListaNav>Inicio</ItemListaNav></Link>
+                
+                <Link to="/category/programacion"><ItemListaNav>Programacion</ItemListaNav></Link>
+
+                <Link to="/category/diseño"><ItemListaNav>Diseño</ItemListaNav></Link>
+                <Link to="#"><ItemListaNav>Recomendaciones</ItemListaNav></Link>
+                <Link to="#"><ItemListaNav>Ayuda</ItemListaNav></Link>
             </ul>
             <CartWidget/>
         </Nav>
@@ -21,7 +25,7 @@ export default function NavBar(){
 
 
 const Nav=styled.nav`
-    width: 80%;
+    width: 100%;
     padding:35px 0;
     margin:auto;
     display: flex;
@@ -43,13 +47,12 @@ const Titulo=styled.h2`
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 2rem;
 `
-const LinkListanav=styled.a`
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    font-family: Roboto,"sans-serif";
-`
+
 const ItemListaNav=styled.li`
+text-decoration: none;
+color: white;
+font-size: 1.2rem;
+font-family: Roboto,"sans-serif";
 list-style: none;
 margin:0 20px;
 display: inline-block;
