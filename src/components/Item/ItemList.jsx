@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import Banner from "../Banner/Banner";
 import Item from "./Item";
 
 
 function ItemList(props) {
-
   return (
     <>
+        <Banner/>
         <FlexWrapper>
         {
             props.coursesList?.map((item)=>{
@@ -26,9 +27,10 @@ function ItemList(props) {
 }
 const FlexWrapper=styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap:wrap;
     margin:3rem auto;
-    width: 80%;
+    width: 75%;
     flex-wrap: wrap;
     
 `

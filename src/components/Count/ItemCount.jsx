@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react';
 import styled from "styled-components";
+import Button from '../Button/Button';
 
 
 function ItemCount(props) {
-  const [productCount,setProductCount] =useState(0);
+  const [productCount,setProductCount] =useState(1);
 function handleSubstract(){
   if(productCount>1) {
     setProductCount(productCount-1);
@@ -14,8 +15,9 @@ function handleAdd(){
   if(productCount<props.stock){
     setProductCount(productCount+1);
   }
-  
 }
+
+
 
   return (
     <ContainerItemCount>
@@ -25,7 +27,9 @@ function handleAdd(){
           <strong>{productCount}</strong>
           <BtnCount onClick={handleAdd}>+</BtnCount>
       </ContainerBtnItemCount>
-      <AgregarAlCarritoBtn>Agregar al carrito</AgregarAlCarritoBtn>
+      <div onClick={()=>{props.OnAdd(productCount)}}>
+      <Button title='Agregar al carrito'/>
+      </div>
     </ContainerItemCount>
   )
 }
@@ -35,14 +39,14 @@ export default ItemCount;
 const ContainerItemCount=styled.div`
   display: block;
   flex-direction: column;
-  margin:0 20px;
+  margin:0 auto;
 `
 
 const ContainerBtnItemCount=styled.div`
 margin: 0 auto;
 border-radius: 3px;
 border: 1px solid #f3f3f3; 
-width: 150px;
+width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -60,13 +64,7 @@ cursor: pointer;
   background-color: #7e7e83;  
 }
 `
-const AgregarAlCarritoBtn=styled.button`
-  width: 140px;
-  height: 45px;
-  margin-left: 5px;
-  margin-top: 1.2rem;
-  border-radius: 10px;
-`
+
 
 
 
