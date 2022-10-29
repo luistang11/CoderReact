@@ -6,9 +6,9 @@ import {CartContextProvider} from './context/CartContextProvider';
 import Cart from "./components/Cart/Cart"
 import './app.css';
 import Checkout from './components/Chekout/Checkout';
+
 function App() {
   return (
-
       <CartContextProvider>
         <BrowserRouter>
           <NavBar/>
@@ -23,7 +23,6 @@ function App() {
             </Routes>
         </BrowserRouter>
       </CartContextProvider>
-
   );
 }
 

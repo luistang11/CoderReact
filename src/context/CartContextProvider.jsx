@@ -14,13 +14,9 @@ function CartContextProvider(props) {
               setCart([...cart, {...item, count}]);
             }
     }
-
-
     function buyerID(id){
         setBuyId(id)
     }
-    
-
     function removeItem(idToRemove) {
         let newCart = cart.filter((itemInCart) => itemInCart.id !== idToRemove);
         setCart(newCart);

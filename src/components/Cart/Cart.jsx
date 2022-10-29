@@ -38,6 +38,7 @@ function Cart() {
           <CartContainer>
             
             <div style={{display:'flex',justifyContent:'space-between', flexWrap:'wrap',marginTop:'2rem'}}>
+              
               <ContainerCartFull >
                 <div onClick={()=>clearCart()} style={{width:'80%',margin:'10px auto'}}>
                   <Botonn>Vaciar Carrito</Botonn>
